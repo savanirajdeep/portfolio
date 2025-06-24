@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { portfolioAPI } from './services/api';
 
 // Components
@@ -64,7 +63,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App bg-gray-50 min-h-screen">
+      <div className="App bg-gray-50 min-h-screen text-gray-900">
         <Header personalInfo={portfolioData.personalInfo} />
         
         <main>

@@ -37,7 +37,7 @@ public class DataInitializer implements CommandLineRunner {
         personalInfo.setName("Rajdeep Savani");
         personalInfo.setTitle("Java Developer");
         personalInfo.setPhone("+1(813) 606-8695");
-        personalInfo.setEmail("rajdeep.s@cvtechmail.com");
+        personalInfo.setEmail("savanirajdeep17@gmail.com");
         personalInfo.setLocation("Florida");
         personalInfo.setLinkedinUrl("https://linkedin.com/in/rajdeepsavani");
         personalInfo.setGithubUrl("https://github.com/rajdeepsavani");

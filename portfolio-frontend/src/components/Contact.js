@@ -118,7 +118,7 @@ const Contact = ({ personalInfo }) => {
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.02, x: 5 }}
-                    className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+                    className="flex items-center space-x-4 p-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
                   >
                     <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${info.color}`}>
                       {info.icon}
