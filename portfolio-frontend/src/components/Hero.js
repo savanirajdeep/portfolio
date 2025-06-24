@@ -30,7 +30,7 @@ const Hero = ({ personalInfo }) => {
           >
             <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-2xl">
               <img
-                src={personalInfo?.profileImageUrl || 'https://via.placeholder.com/300x300?text=RS'}
+                src={personalInfo?.profileImageUrl || '/profile.jpg'}
                 alt={personalInfo?.name || 'Profile'}
                 className="w-full h-full object-cover"
               />

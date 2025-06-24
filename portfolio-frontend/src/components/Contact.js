@@ -22,16 +22,21 @@ const Contact = ({ personalInfo }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    try {
+      await fetch('http://localhost:8080/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
       setIsSubmitting(false);
       setIsSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      // Reset success message after 5 seconds
       setTimeout(() => setIsSubmitted(false), 5000);
-    }, 2000);
+    } catch (error) {
+      setIsSubmitting(false);
+      alert('Failed to send message. Please try again later.');
+    }
   };
 
   const containerVariants = {

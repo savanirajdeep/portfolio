@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { Code, Database, Cloud, Globe, Users, Settings } from 'lucide-react';
 
 const Skills = ({ skills }) => {
+  console.log('Skills prop:', skills);
+
   const [activeCategory, setActiveCategory] = useState('All');
 
   // Group skills by category
@@ -64,14 +66,14 @@ const Skills = ({ skills }) => {
   return (
     <section id="skills" className="section-padding bg-gray-50">
       <div className="container-custom">
-        <motion.div
+        <div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
           {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
+          <div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Skills & Expertise
             </h2>
@@ -79,12 +81,12 @@ const Skills = ({ skills }) => {
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               A comprehensive overview of my technical skills and expertise across various technologies and methodologies.
             </p>
-          </motion.div>
+          </div>
 
           {/* Category Filter */}
-          <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mb-12">
+          <div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mb-12">
             {categories.map((category) => (
-              <motion.button
+              <div
                 key={category}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -96,17 +98,17 @@ const Skills = ({ skills }) => {
                 }`}
               >
                 {category}
-              </motion.button>
+              </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* Skills Grid */}
-          <motion.div
+          <div
             variants={containerVariants}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {filteredSkills.map((skill, index) => (
-              <motion.div
+              <div
                 key={skill.id}
                 variants={itemVariants}
                 whileHover={{ scale: 1.02, y: -5 }}
@@ -152,12 +154,12 @@ const Skills = ({ skills }) => {
                     />
                   )}
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* Skills Summary */}
-          <motion.div variants={itemVariants} className="mt-16">
+          <div variants={itemVariants} className="mt-16">
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
                 Skills Overview
@@ -196,8 +198,8 @@ const Skills = ({ skills }) => {
                 ))}
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

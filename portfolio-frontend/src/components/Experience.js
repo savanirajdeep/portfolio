@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import { Calendar, MapPin, Building, ExternalLink } from 'lucide-react';
 
 const Experience = ({ experiences }) => {
@@ -43,14 +43,14 @@ const Experience = ({ experiences }) => {
   return (
     <section id="experience" className="section-padding bg-white">
       <div className="container-custom">
-        <motion.div
+        <div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
           {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
+          <div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Work Experience
             </h2>
@@ -58,7 +58,7 @@ const Experience = ({ experiences }) => {
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               My professional journey and the impact I've made in various organizations.
             </p>
-          </motion.div>
+          </div>
 
           {/* Experience Timeline */}
           <div className="relative">
@@ -67,7 +67,7 @@ const Experience = ({ experiences }) => {
 
             <div className="space-y-12">
               {experiences?.map((experience, index) => (
-                <motion.div
+                <div
                   key={experience.id}
                   variants={itemVariants}
                   className={`relative flex items-start ${
@@ -81,7 +81,7 @@ const Experience = ({ experiences }) => {
                   <div className={`ml-16 md:ml-0 md:w-5/12 ${
                     index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'
                   }`}>
-                    <motion.div
+                    <div
                       whileHover={{ scale: 1.02, y: -5 }}
                       className="card p-6 hover:shadow-xl transition-all duration-300"
                     >
@@ -158,15 +158,15 @@ const Experience = ({ experiences }) => {
                           </div>
                         </div>
                       )}
-                    </motion.div>
+                    </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
 
           {/* Experience Summary */}
-          <motion.div variants={itemVariants} className="mt-16">
+          <div variants={itemVariants} className="mt-16">
             <div className="bg-gradient-to-r from-primary-50 to-purple-50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
                 Experience Summary
@@ -199,8 +199,8 @@ const Experience = ({ experiences }) => {
                 </div>
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
