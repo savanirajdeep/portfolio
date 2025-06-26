@@ -60,7 +60,7 @@ const Skills = () => {
     <section id="skills" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="section-title">Skills & Technologies</h2>
+          <h2 className="section-title text-gray-900">Skills & Technologies</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             A comprehensive overview of my technical expertise and the technologies I work with
           </p>
@@ -70,7 +70,7 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div 
               key={index}
-              className="card p-6 hover:scale-105 transition-all duration-300"
+              className="card p-6 hover:scale-105 transition-all duration-300 bg-white"
             >
               <div className="flex items-center mb-6">
                 <div className="text-primary-600 mr-3">
@@ -85,7 +85,7 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <span 
                     key={skillIndex}
-                    className="bg-gradient-to-r from-primary-500 to-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium hover:scale-110 transition-transform duration-200"
+                    className="bg-gradient-to-r from-slate-600 via-blue-600 to-blue-400 text-white px-3 py-1 rounded-full text-sm font-medium hover:scale-110 transition-transform duration-200"
                   >
                     {skill}
                   </span>

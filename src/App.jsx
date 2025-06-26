@@ -21,7 +21,7 @@ function App() {
   }, [])
 
   if (isLoading) {
-    return (
+  return (
       <div className="min-h-screen gradient-bg flex items-center justify-center">
         <div className="text-white text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-white mx-auto mb-4"></div>
@@ -43,7 +43,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
-    </div>
+      </div>
   )
 }
 

@@ -87,7 +87,7 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="section-title">Get In Touch</h2>
+          <h2 className="section-title text-gray-900">Get In Touch</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             I'm always interested in new opportunities and exciting projects. Feel free to reach out!
           </p>
@@ -108,7 +108,7 @@ const Contact = () => {
               {contactInfo.map((info, index) => (
                 <div 
                   key={index}
-                  className="card p-4 flex items-center space-x-4 hover:scale-105 transition-transform duration-300"
+                  className="card p-4 flex items-center space-x-4 hover:scale-105 transition-transform duration-300 bg-white"
                 >
                   <div className="flex-shrink-0 text-primary-600">
                     {info.icon}
@@ -133,7 +133,7 @@ const Contact = () => {
             </div>
 
             {/* Availability Status */}
-            <div className="card p-6 bg-gradient-to-r from-primary-50 to-purple-50 border border-primary-100">
+            <div className="card p-6 bg-gradient-to-r  border border-primary-100">
               <div className="flex items-center space-x-3 mb-3">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 <h4 className="font-semibold text-gray-900">Currently Available</h4>
@@ -146,42 +146,40 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="card p-8">
+          <div className="card p-8 bg-white">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                    placeholder="Your name"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white text-gray-900"
+                  placeholder="Your name"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white text-gray-900"
+                  placeholder="your.email@example.com"
+                />
               </div>
 
               <div>
@@ -195,7 +193,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white text-gray-900"
                   placeholder="What's this about?"
                 />
               </div>
@@ -211,7 +209,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 resize-none bg-white text-gray-900"
                   placeholder="Tell me about your project or opportunity..."
                 />
               </div>

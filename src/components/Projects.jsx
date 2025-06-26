@@ -51,7 +51,7 @@ const Projects = () => {
     <section id="projects" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="section-title">Featured Projects</h2>
+          <h2 className="section-title from-slate-700 via-blue-800 to-blue-400">Featured Projects</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             A showcase of my most impactful projects, demonstrating technical skills and problem-solving abilities
           </p>
@@ -64,7 +64,7 @@ const Projects = () => {
               className="card overflow-hidden hover:scale-105 transition-all duration-300 group"
             >
               {/* Project Header */}
-              <div className="gradient-bg p-8 text-center text-white">
+              <div className="from-slate-700 via-blue-800 to-blue-400 p-8 text-center text-white">
                 <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   {project.icon}
                 </div>
@@ -84,7 +84,8 @@ const Projects = () => {
                     {project.features.map((feature, featureIndex) => (
                       <span 
                         key={featureIndex}
-                        className="bg-gradient-to-r from-primary-500 to-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium"
+                        className="bg-gradient-to-r from-primary-500 from-slate-700 via-blue-550 to-blue-500
+ text-white px-3 py-1 rounded-full text-sm font-medium"
                       >
                         {feature}
                       </span>

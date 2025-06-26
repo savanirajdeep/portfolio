@@ -47,7 +47,7 @@ const Experience = () => {
     <section id="experience" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="section-title">Professional Experience</h2>
+          <h2 className="section-title text-gray-900">Professional Experience</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             My journey through different roles and companies, showcasing growth and achievements
           </p>
@@ -55,7 +55,8 @@ const Experience = () => {
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-primary-500 to-purple-500 h-full hidden lg:block"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-primary-500 h-full hidden lg:block from-slate-700 via-blue-800 to-blue-400
+"></div>
 
           <div className="space-y-12">
             {experiences.map((experience, index) => (
@@ -64,15 +65,15 @@ const Experience = () => {
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary-600 rounded-full border-4 border-white shadow-lg hidden lg:block"></div>
 
                 <div className={`lg:w-5/12 ${index % 2 === 0 ? 'lg:ml-auto lg:pl-8' : 'lg:mr-auto lg:pr-8'}`}>
-                  <div className="card p-8 hover:scale-105 transition-transform duration-300">
+                  <div className="card p-8 hover:scale-105 transition-transform duration-300 bg-white">
                     <div className="mb-6">
                       <h3 className="text-2xl font-bold text-primary-600 mb-2">
                         {experience.title}
                       </h3>
-                      <p className="text-lg font-semibold text-gray-700 mb-1">
+                      <p className="text-lg font-semibold text-gray-600 mb-1">
                         {experience.company}
                       </p>
-                      <p className="text-gray-500">
+                      <p className="text-gray-600">
                         {experience.duration}
                       </p>
                     </div>
@@ -83,7 +84,7 @@ const Experience = () => {
                         {experience.achievements.map((achievement, achievementIndex) => (
                           <li key={achievementIndex} className="flex items-start">
                             <span className="text-primary-600 mr-3 mt-1">▸</span>
-                            <span className="text-gray-700">{achievement}</span>
+                            <span className="text-gray-600">{achievement}</span>
                           </li>
                         ))}
                       </ul>
@@ -115,15 +116,15 @@ const Experience = () => {
             <div key={index} className="relative">
               <div className="absolute left-6 top-8 w-4 h-4 bg-primary-600 rounded-full border-4 border-white shadow-lg"></div>
               <div className="ml-16">
-                <div className="card p-6">
+                <div className="card p-6 bg-white">
                   <div className="mb-4">
                     <h3 className="text-xl font-bold text-primary-600 mb-1">
                       {experience.title}
                     </h3>
-                    <p className="text-lg font-semibold text-gray-700 mb-1">
+                    <p className="text-lg font-semibold text-gray-600 mb-1">
                       {experience.company}
                     </p>
-                    <p className="text-gray-500 text-sm">
+                    <p className="text-gray-600 text-sm">
                       {experience.duration}
                     </p>
                   </div>
@@ -134,7 +135,7 @@ const Experience = () => {
                       {experience.achievements.slice(0, 3).map((achievement, achievementIndex) => (
                         <li key={achievementIndex} className="flex items-start text-sm">
                           <span className="text-primary-600 mr-2 mt-1">▸</span>
-                          <span className="text-gray-700">{achievement}</span>
+                          <span className="text-gray-600">{achievement}</span>
                         </li>
                       ))}
                     </ul>

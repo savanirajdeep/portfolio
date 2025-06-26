@@ -33,26 +33,26 @@ const About = () => {
     <section id="about" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="section-title">About Me</h2>
+          <h2 className="section-title text-gray-900">About Me</h2>
         </div>
 
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Text Content */}
             <div className="space-y-6">
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed">
                 I am a dedicated Java Developer with 3 years of experience in designing, developing, 
                 and maintaining Java-based applications. My expertise lies in core Java, Spring Boot, 
                 Hibernate, and RESTful APIs, with a strong foundation in object-oriented programming.
               </p>
               
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed">
                 Currently working at Freddie Mac as a Java Developer, I specialize in microservices 
                 architecture and cloud technologies. I have successfully delivered scalable applications 
                 that have improved system performance and reduced deployment times.
               </p>
               
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed">
                 I hold a Master's degree in Computer Science from the University of South Florida and 
                 am passionate about creating high-quality software solutions that make a difference.
               </p>
@@ -63,7 +63,7 @@ const About = () => {
               {highlights.map((highlight, index) => (
                 <div 
                   key={index}
-                  className="card p-6 flex items-start space-x-4 hover:scale-105 transition-transform duration-300"
+                  className="card p-6 flex items-start space-x-4 hover:scale-105 transition-transform duration-300 bg-white"
                 >
                   <div className="flex-shrink-0 text-primary-600">
                     {highlight.icon}
