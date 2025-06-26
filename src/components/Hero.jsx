@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import profileImg from '../assets/IMG_2739.jpg'
+import profileImg from '../assets/profile_picture.jpg'
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false)
