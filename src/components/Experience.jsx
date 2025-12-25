@@ -1,64 +1,67 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
+
 const Experience = () => {
+  const [sectionRef, isSectionVisible] = useScrollAnimation({ threshold: 0.1 })
   const experiences = [
     {
       title: "Software Engineer",
-      company: "Freddie Mac, USA",
-      duration: "May 2024 - Present",
+      company: "Freddie Mac",
+      duration: "May 2024 – Present",
       achievements: [
-        "Followed agile methodologies for flexible and collaborative development, delivering scalable applications",
-        "Developed microservices architecture, resulting in a 40% reduction in deployment times and faster feature rollout",
-        "Implemented Spring MVC for developing web applications with MVC model, increasing application performance by 30% and reducing development time by 25%",
-        "Applied Spring Security, reducing security vulnerabilities by 30% and enhancing application protection",
-        "Executed RESTful routing using Java Spark for APIs and web services, increasing efficiency of data retrieval by 20% and enlarging API response time by 15%",
-        "Configured and monitored auto-scaling groups on AWS, enhancing system reliability by 35% and decreasing downtime by 40%",
-        "Optimized MySQL database queries, resulting in 15% reduction in query execution time and faster data retrieval",
-        "Ensured Git best practices, reducing code conflicts by 30% and streamlining collaboration among development teams"
+        "Built and operated Spring Boot microservices with secure REST endpoints (JWT, Spring Security), reducing deployment times by 40% and accelerating feature rollout",
+        "Improved application performance by 30% via Spring MVC optimizations and modular design; lowered development time by 25% with reusable components",
+        "Containerized services with Docker and implemented CI/CD using Jenkins/GitLab pipelines for automated builds, tests, and deployments to AWS; increased release speed by 40%",
+        "Configured AWS Auto-Scaling Groups and ELB, improving reliability by 35% and reducing downtime by 40%; added CloudWatch metrics and alerts for proactive monitoring",
+        "Tuned MySQL queries and indexing, cutting query execution time by 15% and improving API latency",
+        "Enforced Git branching and code review standards, reducing merge conflicts by 30% and streamlining team delivery",
+        "Delivered responsive UI features (HTML, CSS, Bootstrap) to support end-to-end product requirements",
+        "Practiced secure SDLC with SAST/DAST awareness and OWASP controls; documented configurations and runbooks for auditability and handoffs"
       ],
-      technologies: ["Spring Boot", "Spring MVC", "Spring Security", "Microservices", "AWS", "MySQL", "Java Spark", "Git"]
+      technologies: ["Spring Boot", "Spring MVC", "Spring Security", "Microservices", "Docker", "Kubernetes", "AWS", "Jenkins", "GitLab", "MySQL", "JWT", "CloudWatch"]
     },
     {
       title: "Software Engineer",
-      company: "Citus Infotech, India",
-      duration: "January 2022 - July 2023",
+      company: "Citus Infotech",
+      duration: "Jan 2022 – Jul 2023",
       achievements: [
-        "Developed comprehensive healthcare management system backend services using Java and Spring Boot for 50,000+ patient users",
-        "Implemented RESTful APIs with 99.9% uptime ensuring scalable data processing and compliance with healthcare encryption standards",
-        "Collaborated in agile teams integrating React frontend interfaces with backend APIs for seamless telemedicine functionality",
-        "Optimized appointment processing performance through system enhancements, achieving 25% reduction in processing time for patient scheduling",
-        "Established CI/CD pipelines using Jenkins, Docker, and Git for automated AWS deployment with 40% faster releases",
-        "Conducted comprehensive unit testing and code reviews for EHR modules, identifying security vulnerabilities and maintaining data integrity",
-        "Developed Python-based data analytics features with SQL and machine learning for generating predictive patient outcome reports",
-        "Migrated legacy systems to microservices architecture within cross-functional teams, improving scalability and clinical decision-making efficiency by 20%"
+        "Developed robust backend services for a large-scale healthcare platform using Java and Spring Boot, ensuring HIPAA compliance, 50,000+ active patient support, and 99.9% API uptime",
+        "Implemented secure RESTful APIs with encryption and strict data-handling standards, improving platform security and reducing security-related incidents by 20%",
+        "Integrated React-based frontends with backend APIs to streamline telemedicine workflows, enhancing real-time appointment coordination and reducing scheduling processing time by 25%",
+        "Built CI/CD pipelines using Jenkins, Docker, and Git for automated AWS deployments, achieving 40% faster release cycles while maintaining code quality through unit tests and code reviews",
+        "Developed advanced Python-based data analytics features using SQL and machine learning techniques to generate predictive patient outcome reports, which helped clinicians to improve medical decision efficiency"
       ],
-      technologies: ["Java", "Spring Boot", "React", "RESTful APIs", "Jenkins", "Docker", "AWS", "Python", "MySQL", "JUnit"]
+      technologies: ["Java", "Spring Boot", "React", "RESTful APIs", "Jenkins", "Docker", "AWS", "Python", "SQL", "MySQL", "JUnit", "Machine Learning"]
     }
   ]
 
   return (
-    <section id="experience" className="py-20 bg-gray-50">
+    <section id="experience" className="py-20 bg-gray-50" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="section-title text-gray-900">Professional Experience</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="section-title">Professional Experience</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-4">
             My journey through different roles and companies, showcasing growth and achievements
           </p>
         </div>
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-primary-500 h-full hidden lg:block from-slate-700 via-blue-800 to-blue-400
-"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-slate-300 h-full hidden lg:block"></div>
 
           <div className="space-y-12">
             {experiences.map((experience, index) => (
-              <div key={index} className="relative">
+              <div 
+                key={index} 
+                className={`relative transition-all duration-1000 ${isSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                style={{ transitionDelay: `${index * 200}ms` }}
+              >
                 {/* Timeline Dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary-600 rounded-full border-4 border-white shadow-lg hidden lg:block"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-slate-900 rounded-full border-4 border-white shadow-lg hidden lg:block"></div>
 
                 <div className={`lg:w-5/12 ${index % 2 === 0 ? 'lg:ml-auto lg:pl-8' : 'lg:mr-auto lg:pr-8'}`}>
-                  <div className="card p-8 hover:scale-105 transition-transform duration-300 bg-white">
+                  <div className="card p-8 hover:shadow-md transition-all duration-200">
                     <div className="mb-6">
-                      <h3 className="text-2xl font-bold text-primary-600 mb-2">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-2">
                         {experience.title}
                       </h3>
                       <p className="text-lg font-semibold text-gray-600 mb-1">
@@ -87,7 +90,7 @@ const Experience = () => {
                         {experience.technologies.map((tech, techIndex) => (
                           <span 
                             key={techIndex}
-                            className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium border border-gray-200"
+                            className="bg-slate-50 text-slate-700 px-3 py-1.5 rounded-md text-sm font-medium border border-slate-200 hover:bg-slate-100 transition-colors duration-200"
                           >
                             {tech}
                           </span>

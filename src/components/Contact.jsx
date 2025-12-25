@@ -1,7 +1,8 @@
 import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-const contactInfo = [
+  const contactInfo = [
   {
     icon: (
       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -9,8 +10,8 @@ const contactInfo = [
       </svg>
     ),
     title: "Email",
-    value: "rajdeep@cvtechmail.com",
-    link: "mailto:rajdeep@cvtechmail.com",
+    value: "savanirajdeep17@gmail.com",
+    link: "mailto:savanirajdeep17@gmail.com",
   },
   {
     icon: (
@@ -58,6 +59,7 @@ const contactInfo = [
 
 
 const Contact = () => {
+  const [sectionRef, isSectionVisible] = useScrollAnimation({ threshold: 0.2 })
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -102,9 +104,9 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gray-50" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="section-title text-gray-900">Get In Touch</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             I'm always interested in new opportunities and exciting projects.
@@ -114,7 +116,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className={`space-y-8 transition-all duration-1000 delay-200 ${isSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Let's Connect
@@ -130,9 +132,9 @@ const Contact = () => {
               {contactInfo.map((info, index) => (
                 <div
                   key={index}
-                  className="card p-4 flex items-center space-x-4 hover:scale-105 transition-transform duration-300 bg-white"
+                  className="card p-4 flex items-center space-x-4 hover:shadow-md transition-all duration-200"
                 >
-                  <div className="flex-shrink-0 text-primary-600">
+                  <div className="flex-shrink-0 text-slate-700">
                     {info.icon}
                   </div>
                   <div>
@@ -144,7 +146,7 @@ const Contact = () => {
                         href={info.link}
                         target={info.target || "_self"}
                         rel={info.target === "_blank" ? "noopener noreferrer" : undefined}
-                        className="text-gray-600 hover:text-primary-600 transition-colors duration-300"
+                        className="text-gray-600 hover:text-slate-900 transition-colors duration-200"
                       >
                         {info.value}
                       </a>
@@ -157,9 +159,9 @@ const Contact = () => {
             </div>
 
             {/* Availability Status */}
-            <div className="card p-6 bg-gradient-to-r border border-primary-100">
+            <div className="card p-6 bg-slate-50 border border-slate-200">
               <div className="flex items-center space-x-3 mb-3">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 <h4 className="font-semibold text-gray-900">
                   Currently Available
                 </h4>
@@ -172,7 +174,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="card p-8 bg-white">
+          <div className={`card p-8 bg-white transition-all duration-1000 delay-300 ${isSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
               Send a Message
             </h3>
@@ -192,7 +194,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white text-gray-900"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-slate-900 transition-all duration-200 bg-white text-gray-900"
                   placeholder="Your name"
                 />
               </div>
@@ -211,7 +213,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white text-gray-900"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-slate-900 transition-all duration-200 bg-white text-gray-900"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -230,7 +232,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white text-gray-900"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-slate-900 transition-all duration-200 bg-white text-gray-900"
                   placeholder="What's this about?"
                 />
               </div>
@@ -249,28 +251,23 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 resize-none bg-white text-gray-900"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-slate-900 transition-all duration-200 resize-none bg-white text-gray-900"
                   placeholder="Tell me about your project or opportunity..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="flex items-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full text-lg shadow-md hover:bg-blue-700 transition"
+                className="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center"
               >
                 <span>Send Message</span>
                 <svg
-                  className="ml-2 w-6 h-6"
+                  className="ml-2 w-5 h-5"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2"
                   viewBox="0 0 24 24"
                 >
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                  <path d="M8 13h8M8 9h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                  <circle cx="9" cy="15" r="1" fill="currentColor"/>
-                  <circle cx="12" cy="15" r="1" fill="currentColor"/>
-                  <circle cx="15" cy="15" r="1" fill="currentColor"/>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                 </svg>
               </button>
             </form>

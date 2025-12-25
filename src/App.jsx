@@ -7,6 +7,7 @@ import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ScrollProgress from './components/ScrollProgress'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -33,6 +34,7 @@ function App() {
 
   return (
     <div className="App">
+      <ScrollProgress />
       <Navbar />
       <main>
         <Hero />
