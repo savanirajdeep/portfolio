@@ -3,6 +3,7 @@ name: Deploy
 on:
     branches:
       - master
+  workflow_dispatch:
 
 permissions:
   contents: write
